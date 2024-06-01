@@ -54,6 +54,9 @@ const updateTodo = (text) =>{
     })
 }
 
+const toggleDone = (element) => {
+    element.classList.toggle('done')
+}
 
 // eventos
 
@@ -83,6 +86,9 @@ document.addEventListener("click", (e) =>{
         toggleForms()
         editInput.value = todoTitle
         oldInputValue = todoTitle
+    }
+    if (targetEl.classList.contains("finish-todo")) {
+        toggleDone(parentEl)
     }
 })
 
